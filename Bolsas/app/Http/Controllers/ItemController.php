@@ -28,6 +28,7 @@ class ItemController extends Controller
     public function confirm(Request $request)
     {
         $image = str_replace('public', 'storage', $request->image->store('public/images'));
+        // Storage::disk('google')->put('test.txt', $request->image);
 
         $description = Description::create([
             'extra' => $request->extra,

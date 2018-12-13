@@ -28,4 +28,11 @@ class HomeController extends Controller
 
         return view('home', compact('items'));
     }
+
+    public function purchases()
+    {
+        $items = Item::all();
+
+        return view('product.purchases', compact('items'));
+    }
 }
