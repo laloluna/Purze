@@ -86,11 +86,16 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
                 <div class="col-md-12 col-4 align-right">
                     <a href="{{ route('create') }}" class="btn btn-block hidden-sm-down btn-primary"> A&ntilde;adir producto</a>
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
 <!-- Row -->
