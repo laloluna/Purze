@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
 use  App\Place;
 use  App\Color;
 use  App\Brand;
@@ -27,12 +29,12 @@ class ItemController extends Controller
 
     public function confirm(Request $request)
     {
-        $image = str_replace('public', 'storage', $request->image->store('public/images'));
-        // Storage::disk('google')->put('test.txt', $request->image);
+        $img_name = $request->image->getClientOriginalName();
+        Storage::disk('google')->put($img_name, file_get_contents($request->image->getRealPath()));
 
         $description = Description::create([
             'extra' => $request->extra,
-            'photo' => $image,
+            'photo' => $img_name,
             'size_id' => $request->size,
             'type_id' => $request->type,
             'brand_id' => $request->brand,

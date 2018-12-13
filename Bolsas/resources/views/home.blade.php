@@ -16,7 +16,7 @@
                 <h4 class="card-title">Ventas</h4>
                 <div class="text-right">
                     <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> 0</h2>
-                    <span class="text-muted">Total de productos vendidos</span>
+                    <span class="text-muted">Productos</span>
                 </div>
                 <span class="text-success">0%</span>
                 <div class="progress">
@@ -50,40 +50,44 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-block">
-                <div class="col-md-12 col-4 align-right">
-                    <a href="{{ route('create') }}" class="btn pull-right hidden-sm-down btn-primary"> A&ntilde;adir producto</a>
-                </div>
+                
                 <h4 class="card-title">Lista de Productos</h4>
                 <div class="table-responsive m-t-40">
                     <table class="table stylish-table">
                         <thead>
                             <tr>
                                 <th colspan="2">Producto</th>
-                                <th>Precio de lista</th>
-                                <th>Costo</th>
-                                <th>Precio Final</th>
-                                <th>Estado</th>
+                                <th>Venta</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($items as $key=>$item)
                                 <tr href="">
-                                    <td>
-                                        <span class="round"><img src="{{ $item->description->photo }}" alt="user" width="50" /></span>
+                                    <td width="10%">
+                                        <span class="round">
+                                            <?php 
+                                                $imageData = base64_encode(Storage::get($item->description->photo));
+                                                $src = 'data: image/jpeg;base64,'.$imageData;
+                                                echo '<img src="' . $src . '" alt="user" width="50">';
+                                            ?>
+                                        </span>
                                     </td>
-                                    <td>
-                                        <h6>{{ $item->description->brand->name }}</h6><small class="text-muted">{{ $item->description->type->name }} / {{ $item->description->color->name }} </small>
+                                    <td width="12%">
+                                        <h6>{{ $item->description->brand->name }}</h6>
+                                        <small class="text-muted">${{ round($item->price_final) }} / ${{ round($item->cost_final) }} </small>
                                     </td>
-                                    <td>${{ round($item->price_final) }}</td>
-                                    <td>${{ round($item->cost_final) }}</td>
-                                    <td>${{ round($item->sell_final) }}</td>
+                                    <td><font color="#f00">${{ round($item->sell_final) }}</td>
                                     <td width="20%">
-                                        <a href="" class="btn btn-success"> Vender</a>
+                                        <a href="" class="btn btn-success"> +</a>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-12 col-4 align-right">
+                    <a href="{{ route('create') }}" class="btn btn-block hidden-sm-down btn-primary"> A&ntilde;adir producto</a>
                 </div>
             </div>
         </div>

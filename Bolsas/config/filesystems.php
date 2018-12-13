@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'google'),
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ return [
             'secret' => '4HKHCeWodW+ZIHTTKGUgW8bdC2V8XRqjMrx1VKjS', 
             'region' => 'us-east-1',
             'bucket' => 'chance-225315.appspot.com', 
-            'base_url'=>'https://storage.googleapis.com' ,
+            'endpoint'=>'https://storage.googleapis.com' ,
         ],
 
         's3' => [

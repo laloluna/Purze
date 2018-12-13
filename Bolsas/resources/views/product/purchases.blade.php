@@ -28,16 +28,23 @@
                             @foreach($items as $key=>$item)
                                 <tr href="">
                                     <td>
-                                        <span class="round"><img src="{{ $item->description->photo }}" alt="user" width="50" /></span>
+                                        <span class="round">
+                                            <?php 
+                                                $imageData = base64_encode(Storage::get($item->description->photo));
+                                                $src = 'data: image/jpeg;base64,'.$imageData;
+                                                echo '<img src="' . $src . '" alt="user" width="50">';
+                                            ?>
+                                        </span>
                                     </td>
                                     <td>
-                                        <h6>{{ $item->description->brand->name }}</h6><small class="text-muted">{{ $item->description->type->name }} / {{ $item->description->color->name }} </small>
+                                        <h6>{{ $item->description->brand->name }}</h6>
+                                        <small class="text-muted">{{ $item->description->type->name }} / {{ $item->description->color->name }} </small>
                                     </td>
                                     <td>${{ round($item->price_final) }}</td>
                                     <td>${{ round($item->cost_final) }}</td>
-                                    <td>${{ round($item->sell_final) }}</td>
+                                    <td><font color="#f00">${{ round($item->sell_final) }}</td>
                                     <td width="20%">
-                                        <a href="" class="btn btn-success"> Abonar </a>
+                                        <a href="" class="btn btn-success"> Vender</a>
                                     </td>
                                 </tr>
                             @endforeach
