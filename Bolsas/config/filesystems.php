@@ -55,6 +55,15 @@ return [
             'visibility' => 'public',
         ],
 
+        'google' => [ 
+            'driver' => 's3', 
+            'key' => 'GOOGIAWO2VNWJTCJZTW2SD5T', 
+            'secret' => '4HKHCeWodW+ZIHTTKGUgW8bdC2V8XRqjMrx1VKjS', 
+            'region' => 'us-east-1',
+            'bucket' => 'chance-225315.appspot.com', 
+            'base_url'=>'https://storage.googleapis.com' ,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
