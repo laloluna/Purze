@@ -28,13 +28,7 @@
                             @foreach($items as $key=>$item)
                                 <tr href="">
                                     <td>
-                                        <span class="round">
-                                            <?php 
-                                                $imageData = base64_encode(Storage::get($item->description->photo));
-                                                $src = 'data: image/jpeg;base64,'.$imageData;
-                                                echo '<img src="' . $src . '" alt="user" width="50">';
-                                            ?>
-                                        </span>
+                                        <span class="round"><img src="{{ $item->description->photo }}" alt="user" width="50" /></span>
                                     </td>
                                     <td>
                                         <h6>{{ $item->description->brand->name }}</h6>

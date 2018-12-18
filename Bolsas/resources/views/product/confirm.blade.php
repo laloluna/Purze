@@ -13,12 +13,8 @@
     <div class="col-lg-12 col-xlg-3 col-md-5">
         <div class="card">
             <div class="card-block">
-                <center class="m-t-30"> 
-                    <?php 
-                        $imageData = base64_encode(Storage::get($item->description->photo));
-                        $src = 'data: image/jpeg;base64,'.$imageData;
-                        echo '<img src="' . $src . '" class="img-circle" width="200" />';
-                    ?>
+                <center class="m-t-30">
+                    <img src="{{ $item->description->photo }}" class="img-circle" width="200" />
                     <h2 class="font-normal">{{ $item->description->brand->name }}</h2>
                     <h3 class="card-subtitle">{{ $item->description->type->name }} / {{ $item->description->color->name }}</h3>
                     <div class="row text-center justify-content-md-center">

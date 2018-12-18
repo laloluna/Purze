@@ -65,13 +65,7 @@
                             @foreach($items as $key=>$item)
                                 <tr href="">
                                     <td width="10%">
-                                        <span class="round">
-                                            <?php 
-                                                $imageData = base64_encode(Storage::get($item->description->photo));
-                                                $src = 'data: image/jpeg;base64,'.$imageData;
-                                                echo '<img src="' . $src . '" alt="user" width="50">';
-                                            ?>
-                                        </span>
+                                        <span class="round"><img src="{{ $item->description->photo }}" alt="user" width="50" /></span>
                                     </td>
                                     <td width="12%">
                                         <h6>{{ $item->description->brand->name }}</h6>
@@ -86,11 +80,16 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
                 <div class="col-md-12 col-4 align-right">
                     <a href="{{ route('create') }}" class="btn btn-block hidden-sm-down btn-primary"> A&ntilde;adir producto</a>
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
 <!-- Row -->
