@@ -69,7 +69,7 @@
                                     </td>
                                     <td width="12%">
                                         <h6>{{ $item->description->brand->name }}</h6>
-                                        <small class="text-muted">${{ round($item->price_final) }} / ${{ round($item->cost_final) }} </small>
+                                        <small class="text-muted">{{ $item->description->type->name }} </small>
                                     </td>
                                     <td><font color="#f00">${{ round($item->sell_final) }}</td>
                                     <td width="20%">
@@ -84,8 +84,8 @@
         </div>
         <div class="card">
             <div class="card-block">
-                <div class="col-md-12 col-4 align-right">
-                    <a href="{{ route('create') }}" class="btn btn-block hidden-sm-down btn-primary"> A&ntilde;adir producto</a>
+                <div class="col-md-12 align-right">
+                    <a href="{{ route('create') }}" class="btn btn-block btn-primary"> A&ntilde;adir producto</a>
                 </div>
             </div>
         </div>
