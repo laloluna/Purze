@@ -46,20 +46,15 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ route('home') }}">
                         <!-- Logo icon -->
                         <b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- <img src="../assets/images/bars.png" alt="homepage" class="dark-logo" /> -->
+                            <i class="fa fa-home"></i>
                             
                         </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span>
-                            <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                        </span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
@@ -69,7 +64,12 @@
                     <!-- ============================================================== -->
                     <!-- Place for search -->
                     <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
                     <ul class="navbar-nav mr-auto mt-md-0 ">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                     </ul>
                     <!-- ============================================================== -->
                     <!-- User profile and search -->
