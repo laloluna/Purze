@@ -10,7 +10,7 @@
 <!-- Row -->
 <div class="row">
     <!-- Column -->
-    <div class="col-lg-12 col-xlg-3 col-md-5">
+    <div class="col-lg-12">
         <div class="card">
             <div class="card-block">
                 <center class="m-t-30">
@@ -18,14 +18,17 @@
                     <h2 class="font-normal">{{ $item->description->brand->name }}</h2>
                     <h3 class="card-subtitle">{{ $item->description->type->name }} / {{ $item->description->color->name }}</h3>
                     <div class="row text-center justify-content-md-center">
-                        <div class="col-2"><font class="text-themecolor ">Precio</font></div>
-                        <div class="col-2"><font class="text-themecolor ">Costo</font></div>
-                        <div class="col-2"><font class="text-themecolor ">Sugerencia</font></div>
+                        <div class="col-lg-12"><font class="text-themecolor ">Precio</font></div>
+                        <div class="col-lg-12"><a href="javascript:void(0)" class="link"><i class="fa fa-money"></i> <font class="font-20">${{ round($item->price_final) }}</font></a></div>
                     </div>
                     <div class="row text-center justify-content-md-center">
-                        <div class="col-2"><a href="javascript:void(0)" class="link"><i class="fa fa-money"></i> <font class="font-20">${{ round($item->price_final) }}</font></a></div>
-                        <div class="col-2"><a href="javascript:void(0)" class="link"><i class="fa fa-money"></i> <font class="font-20">${{ round($item->cost_final) }}</font></a></div>
-                        <div class="col-2"><a href="javascript:void(0)" class="link"><i class="fa fa-money"></i> <font class="font-20">${{ round($item->sell_recomended) }}</font></a></div>
+                        <div class="col-lg-12"><font class="text-themecolor ">Costo</font></div>
+                        <div class="col-lg-12"><a href="javascript:void(0)" class="link"><i class="fa fa-money"></i> <font class="font-20">${{ round($item->cost_final) }}</font></a></div>
+                    </div>
+                    <br>
+                    <div class="row text-center justify-content-md-center">
+                        <div class="col-lg-12"><font color="green">Sugerencia</font></div>
+                        <div class="col-lg-12"><a href="javascript:void(0)" class="link"><i class="fa fa-money"></i> <font class="font-20">${{ round($item->sell_recomended) }}</font></a></div>
                     </div>
                     <form class="form-horizontal form-material m-t-30" method="POST" action="{{ route('final') }}" enctype="multipart/form-data">
                     @csrf
