@@ -49,12 +49,16 @@
                     <a class="navbar-brand" href="{{ route('home') }}">
                         <!-- Logo icon -->
                         <b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!--You can put here icon as well // <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> //-->
                             <!-- Dark Logo icon -->
-                            <!-- <img src="../assets/images/bars.png" alt="homepage" class="dark-logo" /> -->
-                            <i class="fa fa-bars"></i>
-                            
+                            <i class="fa fa-bars" alt="homepage" class="dark-logo"></i>
                         </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span>
+                            <!-- dark Logo text -->
+                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                        </span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
