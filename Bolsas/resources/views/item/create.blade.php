@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label class="col-md-12">Dolar</label>
                         <div class="col-md-12">
-                            <input type="number" step=0.001 value="19.1" class="form-control form-control-line" id="dollar" name="dollar">
+                            <input type="number" step=0.001 value="19.8" class="form-control form-control-line" id="dollar" name="dollar">
                         </div>
                     </div>
                     <div class="form-group">

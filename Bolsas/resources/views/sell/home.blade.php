@@ -26,7 +26,7 @@
                             @foreach($items as $key=>$item)
                                 <tr href="">
                                     <td>
-                                        <span class="round"><img src="{{ $item->description->photo }}" alt="user" width="50" /></span>
+                                        <span class="round"><a href="{{ route('items.show', $item->id) }}"><img src="{{ $item->description->photo }}" alt="user" width="50" /></a></span>
                                     </td>
                                     <td>
                                         <h6>{{ $item->description->brand->name }}</h6>

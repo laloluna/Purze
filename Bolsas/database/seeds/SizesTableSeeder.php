@@ -12,6 +12,8 @@ class SizesTableSeeder extends Seeder
     public function run()
     {
         DB::table('sizes')->insert([
+            ['name' => 'N/A'],
+            ['name' => 'Mini'],
             ['name' => 'Pequeña'],
             ['name' => 'Mediana'],
             ['name' => 'Grande']

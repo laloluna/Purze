@@ -15,8 +15,8 @@
             <div class="card-block">
                 <h4 class="card-title">Cliente estelar</h4>
                 <div class="text-right">
-                    <h2 class="font-light m-b-0 text-success"> $1600</h2>
-                    <span class="text-muted">Soco</span>
+                    <h2 class="font-light m-b-0 text-success"> ${{ $stellar_debt }} </h2>
+                    <span class="text-muted"> {{ $stellar_name }} </span>
                 </div>
             </div>
         </div>
@@ -42,8 +42,8 @@
                         </thead>
                         <tbody>
                             @foreach($clients as $key=>$client)
-                                <tr href="">
-                                    <td><font>{{ $client->name }}</td>
+                                <tr>
+                                    <td><a href="{{ route('clients.show', $client->id) }}">{{ $client->name }}</a></td>
                                     <td><font class="text-success">{{ $client->debt }}</td>
                                     <td><a href="{{ route('payments.form', $client->id) }}" class="btn btn-success"> +</a></td>
                                 </tr>

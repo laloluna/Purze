@@ -10,34 +10,34 @@
 <!-- Row -->
 <div class="row">
     <!-- Column -->
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">Ventas</h4>
                 <div class="text-right">
-                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> 0</h2>
+                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> {{ $sold_items->count() }}</h2>
                     <span class="text-muted">Productos</span>
                 </div>
-                <span class="text-success">0%</span>
+                <span class="text-success">{{ $percentage }}%</span>
                 <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ $percentage }}%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Column -->
+</div>
+<!-- Row -->
+<!-- Row -->
+<div class="row">
     <!-- Column -->
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">Ganancias</h4>
                 <div class="text-right">
-                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> $0</h2>
-                    <span class="text-muted">Dinero ganado</span>
-                </div>
-                <span class="text-info">0%</span>
-                <div class="progress">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 0%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> ${{ $win }}</h2>
+                    <span class="text-muted">Pesos</span>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                             @foreach($items as $key=>$item)
                                 <tr href="">
                                     <td width="10%">
-                                        <span class="round"><img src="{{ $item->description->photo }}" alt="user" width="50" /></span>
+                                    <span class="round"><a href="{{ route('items.show', $item->id) }}"><img src="{{ $item->description->photo }}" alt="user" width="50" /></a></span>
                                     </td>
                                     <td width="12%">
                                         <h6>{{ $item->description->brand->name }}</h6>

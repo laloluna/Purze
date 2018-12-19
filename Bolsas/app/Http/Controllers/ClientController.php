@@ -12,8 +12,16 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $clients = Client::all();
-        return view('client.home', compact('clients'));
+        $clients = Client::orderBy('debt')->get();
+        $stellar = $clients->first();
+        $stellar_name = "N/A";
+        $stellar_debt = 0;
+        if($stellar != null){
+            $stellar_name = $stellar->name;
+            $stellar_debt = $stellar->debt;
+        }
+
+        return view('client.home', compact('clients', 'stellar_name', 'stellar_debt'));
     }
 
     public function form()
@@ -30,18 +38,18 @@ class ClientController extends Controller
             'debt' => $request->initial_debt,
         ]);
 
-        //$sell = Sell::create([
-        //    'client_id' => $client->id,
-        //    'item_id' => 100,
-        //    'debt_or_prod' => 0,
-        //    'price' => $request->initial_debt,
-        //]);
-
         return redirect(route('clients'));
     }
 
     public function payment()
     {
         return view('client.create');
+    }
+
+    public function show($current)
+    {
+        $client = Client::all()->find($current);
+        $payments = $client->payments()->get();
+        return view('client.show', compact('client', 'payments'));
     }
 }

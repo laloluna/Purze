@@ -13,13 +13,15 @@ class BrandsTableSeeder extends Seeder
     {
         DB::table('brands')->insert([
             ['name' => 'Coach'],
-            ['name' => 'Calvin Klein'],
-            ['name' => 'Tommy Hilfiger'],
-            ['name' => 'Guess'],
-            ['name' => 'Steve Maiden'],
-            ['name' => 'Nine West'],
-            ['name' => 'Levis'],
             ['name' => 'Columbia'],
+            ['name' => 'Calvin Klein'],
+            ['name' => 'Guess'],
+            ['name' => 'Kipling'],
+            ['name' => 'Levis'],
+            ['name' => 'Nine West'],
+            ['name' => 'Nautica'],
+            ['name' => 'Steve Maiden'],
+            ['name' => 'Tommy'],
             ['name' => 'Timberland']
         ]);
     }

@@ -15,6 +15,7 @@ class TypesTableSeeder extends Seeder
             ['name' => 'Cartera'],
             ['name' => 'Bolsa'],
             ['name' => 'Accesorio'],
+            ['name' => 'Consmetiquera'],
             ['name' => 'Ropa'],
             ['name' => 'Varia']
         ]);

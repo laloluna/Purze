@@ -13,13 +13,16 @@ class ColorsTableSeeder extends Seeder
     {
         DB::table('colors')->insert([
             ['name' => 'Azul'],
+            ['name' => 'Blanca'],
+            ['name' => 'Beige'],
             ['name' => 'Cafe'],
+            ['name' => 'Gris'],
             ['name' => 'Negra'],
+            ['name' => 'Naranja'],
+            ['name' => 'Palo de rosa'],
             ['name' => 'Roja'],
             ['name' => 'Rosa'],
-            ['name' => 'Blanca'],
-            ['name' => 'Palo de rosa'],
-            ['name' => 'Gris']
+            ['name' => 'Verde']
         ]);
     }
 }

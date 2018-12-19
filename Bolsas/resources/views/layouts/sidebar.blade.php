@@ -103,6 +103,9 @@
                         <li>
                             <a href="{{ route('clients') }}" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Clientes</a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin') }}" class="waves-effect"><i class="fa fa-check-square m-r-10" aria-hidden="true"></i>Admin</a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

@@ -5,11 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use  App\Place;
+
 use  App\Color;
+
 use  App\Brand;
+
 use  App\Type;
+
 use  App\Size;
+
 use  App\Description;
+
 use  App\Item;
 
 class ItemController extends Controller
@@ -17,9 +23,9 @@ class ItemController extends Controller
     public function form()
     {
         $places = Place::all();
-        $colors = Color::all();
-        $brands = Brand::all();
-        $types = Type::all();
+        $colors = Color::orderBy('name')->get();
+        $brands = Brand::orderBy('name')->get();
+        $types = Type::orderBy('name')->get(); ;
         $sizes = Size::all();
 
         return view('item.create', compact('places', 'colors', 'brands', 'types', 'sizes'));
@@ -65,5 +71,11 @@ class ItemController extends Controller
         $item->save();
 
         return redirect(route('home'));
+    }
+
+    public function show($current){
+        $item = Item::find($current);
+
+        return view('item.show', compact('item'));
     }
 }
