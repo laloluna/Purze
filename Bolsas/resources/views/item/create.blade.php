@@ -86,7 +86,7 @@
                     <div class="form-group">
                         <label class="col-md-12">Detalles extra</label>
                         <div class="col-md-12">
-                            <input type="text" class="form-control form-control-line" id="extra" name="extra"></textarea>
+                            <input type="text" value="-" class="form-control form-control-line" id="extra" name="extra"></textarea>
                         </div>
                     </div>
                     <div class="form-group">

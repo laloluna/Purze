@@ -67,7 +67,7 @@ class HomeController extends Controller
 
     public function colors(Request $request)
     {
-        if (!Color::where('name', $request->name)) {
+        if (!Color::where('name', $request->name)->exists()) {
             $color = Color::create([
                 'name' => $request->name,
             ]);
@@ -78,7 +78,7 @@ class HomeController extends Controller
 
     public function brands(Request $request)
     {
-        if (!Brand::where('name', $request->name)) {
+        if (!Brand::where('name', $request->name)->exists()) {
             $brand = Brand::create([
                 'name' => $request->name,
             ]);
@@ -89,7 +89,7 @@ class HomeController extends Controller
 
     public function types(Request $request)
     {
-        if (!Type::where('name', $request->name)) {
+        if (!Type::where('name', $request->name)->exists()) {
             $type = Type::create([
                 'name' => $request->name,
             ]);

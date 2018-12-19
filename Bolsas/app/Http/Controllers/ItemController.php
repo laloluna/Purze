@@ -78,4 +78,12 @@ class ItemController extends Controller
 
         return view('item.show', compact('item'));
     }
+
+    public function update(Request $request){
+        $item = Item::find($request->item_id);
+        $item->sell_final = $request->final_price;
+        $item->save();
+
+        return redirect(route('home'));
+    }
 }

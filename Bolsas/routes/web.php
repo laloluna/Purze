@@ -24,6 +24,7 @@ Route::get('items/form', 'ItemController@form')->name('items.form');
 Route::get('items/show/{current}', 'ItemController@show')->name('items.show');
 Route::post('items/create', 'ItemController@create')->name('items.create');
 Route::post('items/confirm', 'ItemController@confirm')->name('items.confirm');
+Route::post('items/price/update', 'ItemController@update')->name('items.price.update');
 
 Route::get('sells', 'SellController@index')->name('sells');
 Route::get('sells/form/{current}', 'SellController@form')->name('sells.form');

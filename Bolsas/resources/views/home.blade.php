@@ -65,7 +65,7 @@
                             @foreach($items as $key=>$item)
                                 <tr href="">
                                     <td width="10%">
-                                    <span class="round"><a href="{{ route('items.show', $item->id) }}"><img src="{{ $item->description->photo }}" alt="user" width="50" /></a></span>
+                                    <span class="round"><a href="{{ route('items.show', $item->id) }}"><img src="{{ asset($item->description->photo) }}" alt="user" width="50" /></a></span>
                                     </td>
                                     <td width="12%">
                                         <h6>{{ $item->description->brand->name }}</h6>
