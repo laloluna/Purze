@@ -27,10 +27,10 @@
                     </div>
                     <br>
                     <div class="row text-center justify-content-md-center">
-                        <div class="col-lg-12"><font color="green">Sugerencia</font></div>
+                        <div class="col-lg-12"><font class="text-success">Sugerencia</font></div>
                         <div class="col-lg-12"><a href="javascript:void(0)" class="link"><i class="fa fa-money"></i> <font class="font-20">${{ round($item->sell_recomended) }}</font></a></div>
                     </div>
-                    <form class="form-horizontal form-material m-t-30" method="POST" action="{{ route('final') }}" enctype="multipart/form-data">
+                    <form class="form-horizontal form-material m-t-30" method="POST" action="{{ route('items.confirm') }}" enctype="multipart/form-data">
                     @csrf
                         <div class="form-group">
                             <label class="col-md-6">Precio Final</label>

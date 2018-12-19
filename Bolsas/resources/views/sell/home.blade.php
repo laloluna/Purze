@@ -20,8 +20,6 @@
                                 <th colspan="2">Producto</th>
                                 <th>Cliente</th>
                                 <th>Venta</th>
-                                <th>Abonado</th>
-                                <th>Accion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,14 +30,10 @@
                                     </td>
                                     <td>
                                         <h6>{{ $item->description->brand->name }}</h6>
-                                        <small class="text-muted">{{ $item->description->type->name }} / {{ $item->description->color->name }} </small>
+                                        <small class="text-muted">{{ $item->description->type->name }} </small>
                                     </td>
-                                    <td>${{ round($item->price_final) }}</td>
-                                    <td>${{ round($item->cost_final) }}</td>
-                                    <td><font color="#f00">${{ round($item->sell_final) }}</td>
-                                    <td width="20%">
-                                        <a href="" class="btn btn-success"> Vender</a>
-                                    </td>
+                                    <td>{{ $item->sell->client->name }}</td>
+                                    <td class="text-success">${{ round($item->sell->price) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

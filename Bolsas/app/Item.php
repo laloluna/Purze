@@ -17,4 +17,8 @@ class Item extends Model
     public function place(){
         return $this->belongsTo('App\Place');
     }
+
+    public function sell(){
+        return $this->hasOne('App\Sell');
+    }
 }

@@ -13,12 +13,23 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('purchases', 'HomeController@purchases')->name('purchases');
-Route::get('create', 'ItemController@create')->name('create');
-Route::post('confirm', 'ItemController@confirm')->name('confirm');
-Route::post('final', 'ItemController@final')->name('final');
+Route::get('home', 'HomeController@index')->name('home');
+
+Route::get('items/form', 'ItemController@form')->name('items.form');
+Route::post('items/create', 'ItemController@create')->name('items.create');
+Route::post('items/confirm', 'ItemController@confirm')->name('items.confirm');
+
+Route::get('sells', 'SellController@index')->name('sells');
+Route::get('sells/form/{current}', 'SellController@form')->name('sells.form');
+Route::post('sells/create', 'SellController@create')->name('sells.create');
+
+Route::get('clients', 'ClientController@index')->name('clients');
+Route::get('clients/form', 'ClientController@form')->name('clients.form');
+Route::post('clients/create', 'ClientController@create')->name('clients.create');
+
+Route::get('payment/form/{current}', 'PaymentController@form')->name('payments.form');
+Route::post('payment/create', 'PaymentController@create')->name('payments.create');
 
 Route::group(['middleware'=>'auth'], function(){
     Route::get('logout', function(){

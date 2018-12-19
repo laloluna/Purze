@@ -14,7 +14,7 @@ use  App\Item;
 
 class ItemController extends Controller
 {
-    public function create()
+    public function form()
     {
         $places = Place::all();
         $colors = Color::all();
@@ -22,13 +22,13 @@ class ItemController extends Controller
         $types = Type::all();
         $sizes = Size::all();
 
-        return view('product.create', compact('places', 'colors', 'brands', 'types', 'sizes'));
+        return view('item.create', compact('places', 'colors', 'brands', 'types', 'sizes'));
     }
 
-    public function confirm(Request $request)
+    public function create(Request $request)
     {
         $img_name = str_replace('public', 'storage', $request->image->store('public/images'));
-        
+
         $description = Description::create([
             'extra' => $request->extra,
             'photo' => $img_name,
@@ -56,10 +56,10 @@ class ItemController extends Controller
             'description_id' => $description->id,
         ]);
 
-        return view('product.confirm', compact('item'));
+        return view('item.confirm', compact('item'));
     }
 
-    public function final(Request $request){
+    public function confirm(Request $request){
         $item = Item::find($request->item_id);
         $item->sell_final = $request->final_price;
         $item->save();

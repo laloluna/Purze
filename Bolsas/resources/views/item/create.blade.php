@@ -13,7 +13,7 @@
     <div class="col-lg-12 col-xlg-9 col-md-7">
         <div class="card">
             <div class="card-block">
-                <form class="form-horizontal form-material" method="POST" action="{{ route('confirm') }}" enctype="multipart/form-data">
+                <form class="form-horizontal form-material" method="POST" action="{{ route('items.create') }}" enctype="multipart/form-data">
                 @csrf
                     <div class="form-group">
                         <label class="col-md-12">Precio Original (dolares)</label>
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="example-email" class="col-md-12">Costo Original (dolares)</label>
+                        <label class="col-md-12">Costo Original (dolares)</label>
                         <div class="col-md-12">
                             <input type="number" step=0.001 placeholder="$" class="form-control form-control-line" id="cost" name="cost">
                         </div>

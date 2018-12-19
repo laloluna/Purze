@@ -73,7 +73,7 @@
                                     </td>
                                     <td><font color="#f00">${{ round($item->sell_final) }}</td>
                                     <td width="20%">
-                                        <a href="" class="btn btn-success"> +</a>
+                                        <a href="{{ route('sells.form', $item->id) }}" class="btn btn-success"> +</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -85,7 +85,7 @@
         <div class="card">
             <div class="card-block">
                 <div class="col-md-12 align-right">
-                    <a href="{{ route('create') }}" class="btn btn-block btn-primary"> A&ntilde;adir producto</a>
+                    <a href="{{ route('items.form') }}" class="btn btn-block btn-primary"> A&ntilde;adir producto</a>
                 </div>
             </div>
         </div>

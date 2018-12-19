@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
     <title>Tere Shops</title>
     <!-- Bootstrap Core CSS -->
-    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
-    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="{{ asset('css/colors/blue.css') }}" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -76,7 +76,7 @@
                     <!-- ============================================================== -->
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="profile-pic m-r-5" /> Tere Gutierrez</a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/images/users/1.jpg') }}" alt="user" class="profile-pic m-r-5" /> Tere Gutierrez</a>
                         </li>
                     </ul>
                 </div>
@@ -98,10 +98,10 @@
                             <a href="{{ route('home') }}" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Home</a>
                         </li>
                         <li>
-                            <a href="{{ route('purchases') }}" class="waves-effect"><i class="fa fa-shopping-basket m-r-10" aria-hidden="true"></i>Ventas</a>
+                            <a href="{{ route('sells') }}" class="waves-effect"><i class="fa fa-shopping-basket m-r-10" aria-hidden="true"></i>Ventas</a>
                         </li>
                         <li>
-                            <a href="{{ route('create') }}" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Clientes</a>
+                            <a href="{{ route('clients') }}" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Clientes</a>
                         </li>
                     </ul>
                 </nav>
@@ -168,31 +168,31 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/plugins/bootstrap/js/tether.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assets/plugins/bootstrap/js/tether.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
+    <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="{{ asset('js/waves.js') }}"></script>
     <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
+    <script src="{{ asset('js/sidebarmenu.js') }}"></script>
     <!--stickey kit -->
-    <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="{{ asset('assets/plugins/sticky-kit-master/dist/sticky-kit.min.js') }}"></script>
     <!--Custom JavaScript -->
-    <script src="js/custom.min.js"></script>
+    <script src="{{ asset('js/custom.min.js') }}"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
     <!-- Flot Charts JavaScript -->
-    <script src="assets/plugins/flot/jquery.flot.js"></script>
-    <script src="assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-    <script src="js/flot-data.js"></script>
+    <script src="{{ asset('assets/plugins/flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
+    <script src="{{ asset('js/flot-data.js') }}"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="{{ asset('assets/plugins/styleswitcher/jQuery.style.switcher.js') }}"></script>
 </body>
 
 </html>

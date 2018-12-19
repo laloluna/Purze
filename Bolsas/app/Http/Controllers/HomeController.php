@@ -24,14 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $items = Item::all();
+        $items = Item::all()->where('sold', 0);
         return view('home', compact('items'));
-    }
-
-    public function purchases()
-    {
-        $items = Item::all();
-
-        return view('product.purchases', compact('items'));
     }
 }
