@@ -8,6 +8,8 @@ use  App\Client;
 
 use  App\Sell;
 
+use Validator;
+
 class ClientController extends Controller
 {
     public function index()
@@ -31,6 +33,23 @@ class ClientController extends Controller
 
     public function create(Request $request)
     {
+        $validator = Validator::make(
+            [
+                'name' => $request->name,
+                'last_name' => $request->last_name,
+                'initial_debt' => $request->initial_debt,
+            ],
+            [
+                'name' => 'required|string',
+                'last_name' => 'required|string',
+                'initial_debt' => 'required|numeric',
+            ]
+        );
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
         $client = Client::create([
             'name' => $request->name,
             'last_name' => $request->last_name,

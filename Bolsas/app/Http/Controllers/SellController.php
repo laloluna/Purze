@@ -10,6 +10,8 @@ use  App\Sell;
 
 use  App\Client;
 
+use Validator;
+
 class SellController extends Controller
 {
     public function index()
@@ -27,6 +29,19 @@ class SellController extends Controller
 
     public function create(Request $request)
     {
+        $validator = Validator::make(
+            [
+                'final_price' => $request->final_price
+            ],
+            [
+                'final_price' => 'required|numeric'
+            ]
+        );
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
         $sell = Sell::create([
             'client_id' => $request->client_id,
             'item_id' => $request->item_id,

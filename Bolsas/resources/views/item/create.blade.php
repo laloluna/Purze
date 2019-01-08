@@ -19,12 +19,18 @@
                         <label class="col-md-12">Precio Original (dolares)</label>
                         <div class="col-md-12">
                             <input type="number" step=0.001 placeholder="$" class="form-control form-control-line" id="price" name="price">
+                            <div class="invalid-feedback">
+                                <font color="#f00">{{ $errors->first('price') }}</font>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Costo Original (dolares)</label>
                         <div class="col-md-12">
                             <input type="number" step=0.001 placeholder="$" class="form-control form-control-line" id="cost" name="cost">
+                            <div class="invalid-feedback">
+                                <font color="#f00">{{ $errors->first('cost') }}</font>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -86,13 +92,19 @@
                     <div class="form-group">
                         <label class="col-md-12">Detalles extra</label>
                         <div class="col-md-12">
-                            <input type="text" value="-" class="form-control form-control-line" id="extra" name="extra"></textarea>
+                            <input type="text" placeholder="-" class="form-control form-control-line" id="extra" name="extra"></textarea>
+                            <div>
+                                <font color="#f00">{{ $errors->first('extra') }}</font>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Foto</label>
                         <div class="col-md-12">
                             <input type="file" class="form-control form-control-line" id="image" name="image"></textarea>
+                            <div>
+                                <font color="#f00">{{ $errors->first('photo') }}</font>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">

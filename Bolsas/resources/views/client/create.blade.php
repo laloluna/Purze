@@ -19,17 +19,26 @@
                         <label class="col-md-12">Nombre</label>
                         <div class="col-md-12">
                             <input type="text" class="form-control form-control-line" id="name" name="name"></textarea>
+                            <div>
+                                <font color="#f00">{{ $errors->first('name') }}</font>
+                            </div>
                         </div>
                     </div><div class="form-group">
                         <label class="col-md-12">Apellido</label>
                         <div class="col-md-12">
                             <input type="text" class="form-control form-control-line" id="last_name" name="last_name"></textarea>
+                            <div>
+                                <font color="#f00">{{ $errors->first('last_name') }}</font>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Deuda actual</label>
                         <div class="col-md-12">
-                            <input type="number" step=0.001 value="0" class="form-control form-control-line" id="initial_debt" name="initial_debt">
+                            <input type="number" step=0.001 placeholder="$" class="form-control form-control-line" id="initial_debt" name="initial_debt">
+                            <div>
+                                <font color="#f00">{{ $errors->first('initial_debt') }}</font>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">

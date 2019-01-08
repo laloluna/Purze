@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 
-@section('title', 'Administraci&oacute;n')
+@section('title', 'Administracion')
 
 @section('content')
 

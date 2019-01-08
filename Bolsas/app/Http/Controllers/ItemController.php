@@ -18,6 +18,8 @@ use  App\Description;
 
 use  App\Item;
 
+use Validator;
+
 class ItemController extends Controller
 {
     public function form()
@@ -33,6 +35,25 @@ class ItemController extends Controller
 
     public function create(Request $request)
     {
+        $validator = Validator::make(
+            [
+                'price' => $request->price,
+                'cost' => $request->cost,
+                'extra' => $request->extra,
+                'photo' => $request->image
+            ],
+            [
+                'price' => 'required|numeric',
+                'cost' => 'required|numeric',
+                'extra' => 'required|string',
+                'photo' => 'required|file|image'
+            ]
+        );
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
         $img_name = str_replace('public', 'storage', $request->image->store('public/images'));
 
         $description = Description::create([

@@ -37,6 +37,9 @@
                             <label class="col-md-6">Precio de Venta Final</label>
                             <div class="col-md-6">
                                 <input type="number" step=0.001 placeholder="$" class="form-control form-control-line" id="final_price" name="final_price">
+                                <div>
+                                    <font color="#f00">{{ $errors->first('final_price') }}</font>
+                                </div>
                                 <input type="hidden" name="item_id" id="item_id" value="{{ $item->id }}">
                             </div>
                         </div>

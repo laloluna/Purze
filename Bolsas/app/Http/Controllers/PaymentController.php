@@ -8,6 +8,8 @@ use  App\Client;
 
 use  App\Payment;
 
+use Validator;
+
 class PaymentController extends Controller
 {
     public function form($current)
@@ -18,6 +20,19 @@ class PaymentController extends Controller
 
     public function create(Request $request)
     {
+        $validator = Validator::make(
+            [
+                'payment' => $request->payment
+            ],
+            [
+                'payment' => 'required|numeric'
+            ]
+        );
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
         $client = Client::all()->find($request->client_id);
         $client->debt = $client->debt - $request->payment;
         $client->save();

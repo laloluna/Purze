@@ -27,6 +27,9 @@
                             <div class="col-md-6">
                                 <input type="number" step=0.001 placeholder="$" class="form-control form-control-line" id="payment" name="payment">
                                 <input type="hidden" name="client_id" id="client_id" value="{{ $client->id }}">
+                                <div>
+                                    <font color="#f00">{{ $errors->first('payment') }}</font>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
