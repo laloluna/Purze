@@ -27,8 +27,11 @@ Route::post('items/confirm', 'ItemController@confirm')->name('items.confirm');
 Route::post('items/price/update', 'ItemController@update')->name('items.price.update');
 
 Route::get('sells', 'SellController@index')->name('sells');
+Route::get('sells/delete/{current}', 'SellController@delete')->name('sells.delete');
 Route::get('sells/form/{current}', 'SellController@form')->name('sells.form');
+Route::get('sells/form_update/{current}', 'SellController@form_update')->name('sells.form_update');
 Route::post('sells/create', 'SellController@create')->name('sells.create');
+Route::post('sells/update', 'SellController@update')->name('sells.update');
 
 Route::get('clients', 'ClientController@index')->name('clients');
 Route::get('clients/form', 'ClientController@form')->name('clients.form');

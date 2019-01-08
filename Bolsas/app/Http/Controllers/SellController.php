@@ -27,6 +27,14 @@ class SellController extends Controller
         return view('sell.create', compact('item', 'clients'));
     }
 
+    public function form_update($current)
+    {
+        $sell = Sell::all()->find($current);
+        $item = Item::all()->find($sell->item_id);
+        $clients = Client::all();
+        return view('sell.update', compact('sell', 'item', 'clients'));
+    }
+
     public function create(Request $request)
     {
         $validator = Validator::make(
@@ -58,5 +66,39 @@ class SellController extends Controller
         $item->save();
 
         return redirect(route('home'));
+    }
+
+    public function update(Request $request)
+    {
+        $sell = Sell::find($request->sell_id);
+        $sell->client_id = $request->new_client_id;
+        $sell->save();
+
+        $old_client = Client::find($request->old_client_id);
+        $old_client->debt = $old_client->debt - $sell->price;
+        $old_client->save();
+
+        $new_client = Client::find($request->new_client_id);
+        $new_client->debt = $new_client->debt + $sell->price;
+        $new_client->save();
+
+        return redirect(route('sells'));
+    }
+
+    public function delete($current)
+    {
+        $sell = Sell::find($current);
+
+        $item = Item::find($sell->item_id);
+        $item->sold = 0;
+        $item->save();
+
+        $client = Client::find($sell->client_id);
+        $client->debt = $client->debt - $sell->price;
+        $client->save();
+
+        $sell->delete();
+
+        return redirect(route('sells'));
     }
 }

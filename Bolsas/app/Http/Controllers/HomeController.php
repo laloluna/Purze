@@ -16,6 +16,8 @@ use  App\Size;
 
 use  App\Item;
 
+use Validator;
+
 
 class HomeController extends Controller
 {
@@ -67,6 +69,19 @@ class HomeController extends Controller
 
     public function colors(Request $request)
     {
+        $validator = Validator::make(
+            [
+                'name_color' => $request->name
+            ],
+            [
+                'name_color' => 'required|string'
+            ]
+        );
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
         if (!Color::where('name', $request->name)->exists()) {
             $color = Color::create([
                 'name' => $request->name,
@@ -78,6 +93,19 @@ class HomeController extends Controller
 
     public function brands(Request $request)
     {
+        $validator = Validator::make(
+            [
+                'name_brand' => $request->name
+            ],
+            [
+                'name_brand' => 'required|string'
+            ]
+        );
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
         if (!Brand::where('name', $request->name)->exists()) {
             $brand = Brand::create([
                 'name' => $request->name,
@@ -89,6 +117,19 @@ class HomeController extends Controller
 
     public function types(Request $request)
     {
+        $validator = Validator::make(
+            [
+                'name_type' => $request->name
+            ],
+            [
+                'name_type' => 'required|string'
+            ]
+        );
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
         if (!Type::where('name', $request->name)->exists()) {
             $type = Type::create([
                 'name' => $request->name,

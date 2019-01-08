@@ -32,7 +32,9 @@
                                         <h6>{{ $item->description->brand->name }}</h6>
                                         <small class="text-muted">{{ $item->description->type->name }} </small>
                                     </td>
-                                    <td>{{ $item->sell->client->name }}</td>
+                                    <td>
+                                        <a href="{{ route('sells.form_update', $item->sell->id) }}" class="btn btn-success">{{ $item->sell->client->name }}</a>
+                                    </td>
                                     <td class="text-success">${{ round($item->sell->price) }}</td>
                                 </tr>
                             @endforeach

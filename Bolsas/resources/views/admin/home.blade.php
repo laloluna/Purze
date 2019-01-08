@@ -27,6 +27,9 @@
                         <label class="col-md-12">Nuevo</label>
                         <div class="col-md-12">
                             <input type="text" class="form-control form-control-line" id="name" name="name"></textarea>
+                            <div>
+                                <font color="#f00">{{ $errors->first('name_brand') }}</font>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -60,6 +63,9 @@
                         <label class="col-md-12">Nuevo</label>
                         <div class="col-md-12">
                             <input type="text" class="form-control form-control-line" id="name" name="name"></textarea>
+                            <div>
+                                <font color="#f00">{{ $errors->first('name_color') }}</font>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -93,6 +99,9 @@
                         <label class="col-md-12">Nuevo</label>
                         <div class="col-md-12">
                             <input type="text" class="form-control form-control-line" id="name" name="name"></textarea>
+                            <div>
+                                <font color="#f00">{{ $errors->first('name_type') }}</font>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
