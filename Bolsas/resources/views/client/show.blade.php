@@ -31,7 +31,7 @@
                         <tbody>
                             @foreach($payments as $key=>$payment)
                                 <tr>
-                                    <td><span class="text-success">${{ round($payment->quantity) }}</td>
+                                    <td><a href="{{ route('payments.form_update', $payment->id) }}" class="text-success">${{ round($payment->quantity) }}</a></td>
                                     <td><span>{{ $payment->pay_date }}</span> </td>
                                 </tr>
                             @endforeach

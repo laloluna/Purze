@@ -39,7 +39,9 @@ Route::get('clients/show/{current}', 'ClientController@show')->name('clients.sho
 Route::post('clients/create', 'ClientController@create')->name('clients.create');
 
 Route::get('payment/form/{current}', 'PaymentController@form')->name('payments.form');
+Route::get('payment/form_update/{current}', 'PaymentController@form_update')->name('payments.form_update');
 Route::post('payment/create', 'PaymentController@create')->name('payments.create');
+Route::post('payment/update', 'PaymentController@update')->name('payments.update');
 
 Route::group(['middleware'=>'auth'], function(){
     Route::get('logout', function(){

@@ -33,7 +33,7 @@
                                         <small class="text-muted">{{ $item->description->type->name }} </small>
                                     </td>
                                     <td>
-                                        <a href="{{ route('sells.form_update', $item->sell->id) }}" class="btn btn-success">{{ $item->sell->client->name }}</a>
+                                        <a href="{{ route('sells.form_update', $item->sell->id) }}" class="btn btn-block btn-success">{{ $item->sell->client->name }}</a>
                                     </td>
                                     <td class="text-success">${{ round($item->sell->price) }}</td>
                                 </tr>

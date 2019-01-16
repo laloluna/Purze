@@ -71,7 +71,7 @@
                                         <h6>{{ $item->description->brand->name }}</h6>
                                         <small class="text-muted">{{ $item->description->type->name }} </small>
                                     </td>
-                                    <td><font color="#f00">${{ round($item->sell_final) }}</td>
+                                    <td>${{ round($item->sell_final) }}</td>
                                     <td width="20%">
                                         <a href="{{ route('sells.form', $item->id) }}" class="btn btn-success"> +</a>
                                     </td>

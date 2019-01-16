@@ -18,6 +18,12 @@ class PaymentController extends Controller
         return view('payment.create', compact('client'));
     }
 
+    public function form_update($current)
+    {
+        $payment = Payment::find($current);
+        return view('payment.update', compact('payment'));
+    }
+
     public function create(Request $request)
     {
         $validator = Validator::make(
@@ -42,6 +48,33 @@ class PaymentController extends Controller
             'quantity' => $request->payment,
             'pay_date' => date('Y-m-d H:i:s'),
         ]);
+
+        return redirect(route('clients'));
+    }
+
+    public function update(Request $request)
+    {
+        $validator = Validator::make(
+            [
+                'new_quantity' => $request->new_quantity
+            ],
+            [
+                'new_quantity' => 'required|numeric'
+            ]
+        );
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
+        $payment = Payment::find($request->payment_id);
+        $client = Client::find($payment->client_id);
+
+        $client->debt = ($client->debt + $payment->quantity) - $request->new_quantity;
+        $client->save();
+
+        $payment->quantity = $request->new_quantity;
+        $payment->save();
 
         return redirect(route('clients'));
     }
