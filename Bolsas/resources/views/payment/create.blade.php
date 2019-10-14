@@ -26,6 +26,7 @@
                             <label class="col-md-6">Abono</label>
                             <div class="col-md-6">
                                 <input type="number" step=0.001 placeholder="$" class="form-control form-control-line" id="payment" name="payment">
+                                <input type="date" class="form-control" id="date" name="date">
                                 <input type="hidden" name="client_id" id="client_id" value="{{ $client->id }}">
                                 <div>
                                     <font color="#f00">{{ $errors->first('payment') }}</font>

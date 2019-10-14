@@ -28,10 +28,12 @@ class PaymentController extends Controller
     {
         $validator = Validator::make(
             [
-                'payment' => $request->payment
+                'payment' => $request->payment,
+                // 'date' => $request->date
             ],
             [
-                'payment' => 'required|numeric'
+                'payment' => 'required|numeric',
+                // 'date' => 'required|date'
             ]
         );
 
@@ -43,10 +45,12 @@ class PaymentController extends Controller
         $client->debt = $client->debt - $request->payment;
         $client->save();
 
+        if (!$request->date) $request->date = date('Y-m-d H:i:s');
+
         $payment = Payment::create([
             'client_id' => $request->client_id,
             'quantity' => $request->payment,
-            'pay_date' => date('Y-m-d H:i:s'),
+            'pay_date' => $request->date,
         ]);
 
         return redirect(route('clients'));

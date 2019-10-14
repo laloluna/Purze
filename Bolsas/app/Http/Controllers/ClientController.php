@@ -68,7 +68,7 @@ class ClientController extends Controller
     public function show($current)
     {
         $client = Client::all()->find($current);
-        $payments = $client->payments()->get();
+        $payments = $client->payments() ->orderBy('pay_date', 'desc')->get();
         return view('client.show', compact('client', 'payments'));
     }
 }
