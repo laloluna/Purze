@@ -17,7 +17,7 @@ class ClientController extends Controller
         $stellar = Client::orderBy('debt', 'desc')->first(); 
         $clients = Client::orderBy('name')->get();
         if($order == 2){
-            $clients = Client::orderBy('debt')->get();
+            $clients = Client::orderBy('debt', 'desc')->get();
         }
         $stellar_name = "N/A";
         $stellar_debt = 0;
