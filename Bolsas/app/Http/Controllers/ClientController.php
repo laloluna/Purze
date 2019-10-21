@@ -12,10 +12,13 @@ use Validator;
 
 class ClientController extends Controller
 {
-    public function index()
+    public function index($order)
     {
-        $clients = Client::orderBy('debt')->get();
-        $stellar = $clients->first();
+        $stellar = Client::orderBy('debt', 'desc')->first(); 
+        $clients = Client::orderBy('name')->get();
+        if($order == 2){
+            $clients = Client::orderBy('debt')->get();
+        }
         $stellar_name = "N/A";
         $stellar_debt = 0;
         if($stellar != null){
@@ -57,7 +60,7 @@ class ClientController extends Controller
             'debt' => $request->initial_debt,
         ]);
 
-        return redirect(route('clients'));
+        return redirect(route('clients', 1));
     }
 
     public function payment()

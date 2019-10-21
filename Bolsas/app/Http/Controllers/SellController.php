@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Database\Eloquent\Builder;
+
 use  App\Item;
 
 use  App\Sell;
@@ -17,7 +19,22 @@ class SellController extends Controller
     public function index()
     {
         $items = Item::all()->where('sold', 1);
-        return view('sell.home', compact('items'));
+        $clients = Client::all();
+
+        return view('sell.home', compact('items', 'clients'));
+    }
+
+    public function filter(Request $request)
+    {
+        $items = Item::all()->where('sold', 1);
+        if($request->client_id != '-1'){
+            $items = Item::whereHas('sell', function (Builder $query) use($request){
+                $query->where('client_id', $request->client_id);
+            })->get();
+        }
+        $clients = Client::all();
+
+        return view('sell.home', compact('items', 'clients'));
     }
 
     public function form($current)

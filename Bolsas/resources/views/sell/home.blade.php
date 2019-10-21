@@ -43,6 +43,25 @@
                 </div>
             </div>
         </div>
+        <form class="form-horizontal form-material m-t-30" method="POST" action="{{ route('sells.filter') }}" enctype="multipart/form-data">
+        @csrf
+            <div class="card">
+                <br>
+                <div class="col-md-12">
+                    <select class="form-control form-control-line" id="client_id" name="client_id">
+                            <option value="-1"> Todos </option>
+                        @foreach($clients as $key=>$client)
+                            <option value="{{ $client->id }}"> {{ $client->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="card-block">
+                    <div class="col-md-12 align-right">
+                        <button type="submit"  class="btn btn-block btn-success">Filtrar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 <!-- Row -->

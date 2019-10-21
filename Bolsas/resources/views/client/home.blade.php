@@ -35,8 +35,8 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Deuda</th>
+                                <th><a href="{{ route('clients', 1) }}">Nombre</th>
+                                <th><a href="{{ route('clients', 2) }}">Deuda</th>
                                 <th>Abonar</th>
                             </tr>
                         </thead>

@@ -53,7 +53,7 @@ class PaymentController extends Controller
             'pay_date' => $request->date,
         ]);
 
-        return redirect(route('clients'));
+        return redirect(route('clients', 1));
     }
 
     public function update(Request $request)
@@ -80,6 +80,6 @@ class PaymentController extends Controller
         $payment->quantity = $request->new_quantity;
         $payment->save();
 
-        return redirect(route('clients'));
+        return redirect(route('clients', 1));
     }
 }

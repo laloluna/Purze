@@ -30,10 +30,11 @@ Route::get('sells', 'SellController@index')->name('sells');
 Route::get('sells/delete/{current}', 'SellController@delete')->name('sells.delete');
 Route::get('sells/form/{current}', 'SellController@form')->name('sells.form');
 Route::get('sells/form_update/{current}', 'SellController@form_update')->name('sells.form_update');
+Route::post('sells/filter', 'SellController@filter')->name('sells.filter');
 Route::post('sells/create', 'SellController@create')->name('sells.create');
 Route::post('sells/update', 'SellController@update')->name('sells.update');
 
-Route::get('clients', 'ClientController@index')->name('clients');
+Route::get('clients/{order}', 'ClientController@index')->name('clients');
 Route::get('clients/form', 'ClientController@form')->name('clients.form');
 Route::get('clients/show/{current}', 'ClientController@show')->name('clients.show');
 Route::post('clients/create', 'ClientController@create')->name('clients.create');
