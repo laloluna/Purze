@@ -17,7 +17,7 @@
                     <h2 class="font-normal">{{ $client->name }}</h2>
                     <h3 class="card-subtitle">{{ $client->last_name }}</h3>
                     <div class="row text-center justify-content-md-center">
-                        <div class="col-lg-12"><font class="text-themecolor ">Deuda</font></div>
+                        <div class="col-lg-12"><font class="text-themecolor ">Saldo</font></div>
                         <div class="col-lg-12"><a href="javascript:void(0)" class="link"><i class="fa fa-money"></i> <font class="font-20">${{ round($client->debt) }}</font></a></div>
                     </div>
                     <br>

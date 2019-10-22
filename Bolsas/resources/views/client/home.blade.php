@@ -36,7 +36,7 @@
                         <thead>
                             <tr>
                                 <th><a href="{{ route('clients', 1) }}">Nombre</th>
-                                <th><a href="{{ route('clients', 2) }}">Deuda</th>
+                                <th><a href="{{ route('clients', 2) }}">Saldo</th>
                                 <th>Abonar</th>
                             </tr>
                         </thead>
